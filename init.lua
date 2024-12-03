@@ -257,6 +257,27 @@ require('lazy').setup({
     },
   },
 
+  {
+    '3mpee3mpee/nvim_dw_sync',
+    dependencies = {
+      'nvim-telescope/telescope.nvim',
+    },
+    config = function()
+      require('telescope').load_extension 'nvim_dw_sync'
+      require('nvim_dw_sync').setup {}
+    end,
+
+    -- Example keybindings. Adjust these to suit your preferences or remove
+    --   them entirely:
+    keys = {
+      {
+        '<Leader>ds',
+        ':Telescope nvim_dw_sync open_telescope<CR>',
+        desc = 'DW Sync open telescope',
+      },
+    },
+  },
+
   -- NOTE: Plugins can also be configured to run Lua code when they are loaded.
   --
   -- This is often very useful to both group configuration, as well as handle
